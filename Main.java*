@@ -1,0 +1,22 @@
+package demo02;
+
+public class Program7 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			Time t1=new Time();
+			t1.setHrs(1);
+			t1.setMins(1);
+			t1.setSecs(1);
+			System.out.println("t1: "+t1.toString());
+		}
+		catch(InvalidTimeException e)
+		{
+			System.out.println("Inavlid Feild:"+e.getInvalidFeild());
+			System.out.println("Invalid Value:"+e.getInvalidValue());
+			System.out.println("Get message:"+e.getMessage());
+		}
+	}
+
+}

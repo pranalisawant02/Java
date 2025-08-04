@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class SimpleDataTypeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();  // Number of test cases
+
+        for (int i = 0; i < t; i++) {
+            try {
+                long num = sc.nextLong();  // Try reading the number as a long
+                System.out.println(num + " can be fitted in:");
+
+                if (num >= -128 && num <= 127)
+                    System.out.println("* byte");
+                if (num >= -32768 && num <= 32767)
+                    System.out.println("* short");
+                if (num >= -2147483648 && num <= 2147483647)
+                    System.out.println("* int");
+                // long range: -9223372036854775808 to 9223372036854775807
+                System.out.println("* long");
+
+            } catch (Exception e) {
+                // If it's too big for long
+                String badInput = sc.next(); // Consume the input that failed
+                System.out.println(badInput + " can't be fitted anywhere.");
+            }
+        }
+    }
+}
